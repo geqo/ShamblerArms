@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <ShamblerArms_KeepGearHeader>Dead and downed pawns</ShamblerArms_KeepGearHeader>
+  <ShamblerArms_KeepEquipmentOnDeath>Killed pawns keep their weapon</ShamblerArms_KeepEquipmentOnDeath>
+  <ShamblerArms_KeepInventoryOnDeath>Killed pawns keep their inventory</ShamblerArms_KeepInventoryOnDeath>
+  <ShamblerArms_KeepEquipmentOnDowned>Downed pawns keep their weapon</ShamblerArms_KeepEquipmentOnDowned>
+  <ShamblerArms_KeepInventoryOnDowned>Downed pawns keep their inventory</ShamblerArms_KeepInventoryOnDowned>
+  <ShamblerArms_NonUnoPinataActive>Non Uno Pinata is active: item dropping is controlled by its settings.</ShamblerArms_NonUnoPinataActive>
+  <ShamblerArms_IntellectHeader>Shambler intellect</ShamblerArms_IntellectHeader>
+  <ShamblerArms_NoAnomaly>Requires Anomaly; has no effect without it.</ShamblerArms_NoAnomaly>
+  <ShamblerArms_IntellectLevel>Intellect level: {0}</ShamblerArms_IntellectLevel>
+  <ShamblerArms_IntellectLevelTip>Average intellect of a newly raised shambler.</ShamblerArms_IntellectLevelTip>
+  <ShamblerArms_IntellectSpread>Spread: ±{0}</ShamblerArms_IntellectSpread>
+  <ShamblerArms_IntellectSpreadTip>Each shambler gets a random value within level ± spread. Applies to shamblers raised from now on.</ShamblerArms_IntellectSpreadTip>
+  <ShamblerArms_IntellectRange>New shamblers: {0} to {1}</ShamblerArms_IntellectRange>
+  <ShamblerArms_TierHelp>Below 25%: mindless, drops its weapon. 25%+: brawler, keeps melee weapons. 50%+: gunner, shoots from short range. 75%+: tactician, uses cover and picks up weapons on its way.</ShamblerArms_TierHelp>
+</LanguageData>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <ShamblerArms_KeepGearHeader>Погибшие и недееспособные</ShamblerArms_KeepGearHeader>
+  <ShamblerArms_KeepEquipmentOnDeath>Погибшие не роняют оружие</ShamblerArms_KeepEquipmentOnDeath>
+  <ShamblerArms_KeepInventoryOnDeath>Погибшие не роняют инвентарь</ShamblerArms_KeepInventoryOnDeath>
+  <ShamblerArms_KeepEquipmentOnDowned>Недееспособные не роняют оружие</ShamblerArms_KeepEquipmentOnDowned>
+  <ShamblerArms_KeepInventoryOnDowned>Недееспособные не роняют инвентарь</ShamblerArms_KeepInventoryOnDowned>
+  <ShamblerArms_NonUnoPinataActive>Включён Non Uno Pinata: выпадение предметов настраивается в нём.</ShamblerArms_NonUnoPinataActive>
+  <ShamblerArms_IntellectHeader>Интеллект шамблеров</ShamblerArms_IntellectHeader>
+  <ShamblerArms_NoAnomaly>Нужно дополнение Anomaly, без него не действует.</ShamblerArms_NoAnomaly>
+  <ShamblerArms_IntellectLevel>Уровень интеллекта: {0}</ShamblerArms_IntellectLevel>
+  <ShamblerArms_IntellectLevelTip>Средний интеллект только что поднятого шамблера.</ShamblerArms_IntellectLevelTip>
+  <ShamblerArms_IntellectSpread>Разброс: ±{0}</ShamblerArms_IntellectSpread>
+  <ShamblerArms_IntellectSpreadTip>Каждый шамблер получает случайное значение в пределах «уровень ± разброс». Действует на шамблеров, поднятых после изменения.</ShamblerArms_IntellectSpreadTip>
+  <ShamblerArms_IntellectRange>Новые шамблеры: от {0} до {1}</ShamblerArms_IntellectRange>
+  <ShamblerArms_TierHelp>Меньше 25 %: безмозглый, бросает оружие. От 25 %: громила, оставляет оружие ближнего боя. От 50 %: стрелок, стреляет с близкой дистанции. От 75 %: тактик, ищет укрытия и подбирает оружие по пути.</ShamblerArms_TierHelp>
+</LanguageData>

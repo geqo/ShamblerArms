@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- Free-roaming shamblers (no lord): hooked via the vanilla insertion tag. -->
+  <ThinkTreeDef>
+    <defName>ShamblerArms_PickUpWeapon</defName>
+    <insertTag>Shambler_PreMain</insertTag>
+    <insertPriority>100</insertPriority>
+    <thinkRoot Class="ShamblerArms.ThinkNode_ConditionalShamblerTier">
+      <minTier>Tactician</minTier>
+      <subNodes>
+        <li Class="ShamblerArms.JobGiver_ShamblerPickUpWeapon" />
+      </subNodes>
+    </thinkRoot>
+  </ThinkTreeDef>
+</Defs>

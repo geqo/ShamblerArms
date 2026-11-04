@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <ShamblerArms_Intellect.label>интеллект шамблера</ShamblerArms_Intellect.label>
+  <ShamblerArms_Intellect.description>Остатки разума, когда-то жившего в этом теле. Чем умнее шамблер, тем лучше он обращается с оружием.</ShamblerArms_Intellect.description>
+  <ShamblerArms_Intellect.stages.mindless.label>безмозглый</ShamblerArms_Intellect.stages.mindless.label>
+  <ShamblerArms_Intellect.stages.brawler.label>громила</ShamblerArms_Intellect.stages.brawler.label>
+  <ShamblerArms_Intellect.stages.gunner.label>стрелок</ShamblerArms_Intellect.stages.gunner.label>
+  <ShamblerArms_Intellect.stages.tactician.label>тактик</ShamblerArms_Intellect.stages.tactician.label>
+</LanguageData>

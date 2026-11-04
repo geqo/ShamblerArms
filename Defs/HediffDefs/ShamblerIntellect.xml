@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!--
+    Severity = intellect (0..1), set once when the shambler turns; never changes.
+    The stage index is the tier the code reads (ShamblerTier):
+      0 Mindless, 1 Brawler, 2 Gunner, 3 Tactician.
+    Thresholds can be changed here; the order of stages must stay.
+  -->
+  <HediffDef>
+    <defName>ShamblerArms_Intellect</defName>
+    <label>shambler intellect</label>
+    <description>Traces of the mind this body once had. The smarter the shambler, the better it handles weapons.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(0.6, 0.75, 0.55)</defaultLabelColor>
+    <isBad>false</isBad>
+    <everCurableByItem>false</everCurableByItem>
+    <duplicationAllowed>false</duplicationAllowed>
+    <keepOnBodyPartRestoration>true</keepOnBodyPartRestoration>
+    <initialSeverity>0.5</initialSeverity>
+    <minSeverity>0.001</minSeverity>
+    <maxSeverity>1</maxSeverity>
+    <comps>
+      <li Class="HediffCompProperties_DisappearsOnDeath" />
+    </comps>
+    <stages>
+      <li>
+        <minSeverity>0</minSeverity>
+        <label>mindless</label>
+      </li>
+      <li>
+        <minSeverity>0.25</minSeverity>
+        <label>brawler</label>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>0.05</offset>
+          </li>
+        </capMods>
+      </li>
+      <li>
+        <minSeverity>0.5</minSeverity>
+        <label>gunner</label>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>0.1</offset>
+          </li>
+        </capMods>
+      </li>
+      <li>
+        <minSeverity>0.75</minSeverity>
+        <label>tactician</label>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>0.15</offset>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+</Defs>

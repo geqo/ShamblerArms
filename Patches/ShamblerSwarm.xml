@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!--
+    Shamblers in a swarm (death pall, shambler assaults) run the ShamblerSwarm duty,
+    which ends with a wander node, so the Shambler_PreMain hook is never reached.
+    Put weapon pickup right before their fight node. No-op without Anomaly.
+  -->
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/DutyDef[defName="ShamblerSwarm"]/thinkNode/subNodes/li[@Class="JobGiver_ShamblerFight"]</xpath>
+    <match Class="PatchOperationInsert">
+      <xpath>Defs/DutyDef[defName="ShamblerSwarm"]/thinkNode/subNodes/li[@Class="JobGiver_ShamblerFight"]</xpath>
+      <order>Prepend</order>
+      <value>
+        <li Class="ShamblerArms.ThinkNode_ConditionalShamblerTier">
+          <minTier>Tactician</minTier>
+          <subNodes>
+            <li Class="ShamblerArms.JobGiver_ShamblerPickUpWeapon" />
+          </subNodes>
+        </li>
+      </value>
+    </match>
+  </Operation>
+</Patch>
