@@ -66,6 +66,42 @@ namespace ShamblerArms.Shamblers
     }
 
     /// <summary>
+    /// A shambler that loses an arm or hand (amputation, part shot off) drops a weapon it no longer
+    /// has hands for. The HediffDef overload of AddHediff delegates to this one.
+    /// </summary>
+    [HarmonyPatch(typeof(Pawn_HealthTracker), nameof(Pawn_HealthTracker.AddHediff),
+        new[] { typeof(Hediff), typeof(BodyPartRecord), typeof(DamageInfo?), typeof(DamageWorker.DamageResult) })]
+    public static class Pawn_HealthTracker_AddHediff_Patch
+    {
+        public static bool Prepare() => ModsConfig.AnomalyActive;
+
+        public static void Postfix(Pawn ___pawn, Hediff hediff)
+        {
+            Pawn pawn = ___pawn;
+            if (hediff?.Part == null || !IsArmOrHand(hediff.Part))
+                return;
+            ThingWithComps primary = pawn.equipment?.Primary;
+            if (primary == null || pawn.Dead || !pawn.SpawnedOrAnyParentSpawned || !ShamblerIntellect.IsHumanlikeShambler(pawn))
+                return;
+            if (ShamblerBody.HasHandsFor(pawn, primary.def))
+                return;
+            pawn.equipment.TryDropEquipment(primary, out _, pawn.PositionHeld, forbid: false);
+        }
+
+        /// <summary>The part or one of its ancestors is a shoulder/arm/hand (fingers don't count).</summary>
+        private static bool IsArmOrHand(BodyPartRecord part)
+        {
+            for (BodyPartRecord p = part; p != null; p = p.parent)
+            {
+                var tags = p.def.tags;
+                if (tags.Contains(BodyPartTagDefOf.ManipulationLimbCore) || tags.Contains(BodyPartTagDefOf.ManipulationLimbSegment))
+                    return true;
+            }
+            return false;
+        }
+    }
+
+    /// <summary>
     /// Shamblers have Shooting disabled, so the skill reads as 0. For Gunner+ return what the
     /// living pawn had, scaled by intellect.
     /// </summary>
