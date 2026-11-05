@@ -19,13 +19,27 @@
     <li>Ludeon.RimWorld.Anomaly</li>
     <li>avilmask.NonUnoPinata</li>
   </loadAfter>
-  <description>Dead and downed pawns keep their weapons and inventory instead of bursting into loot. Strip them the vanilla way.
+  <description>[EN]
+Dead and downed pawns keep their weapons and inventory instead of bursting into loot. Strip them the vanilla way.
 
 With Anomaly: shamblers raised from armed pawns keep their weapons. Each shambler gets an intellect level (global setting plus random spread) that decides what it can do:
 - mindless: vanilla, weapon is dropped;
 - brawler: keeps melee weapons;
 - gunner: keeps any weapon, shoots from short range;
-- tactician: looks for firing positions and cover, picks up better weapons it passes by.
+- tactician: looks for firing positions and cover, picks up the best weapon it sees nearby.
+A shambler needs working hands to hold a weapon (two for two-handed ones), and sees fewer weapons with damaged eyes.
 
-If Non Uno Pinata is active, its item handling is used and this mod's own item-keeping is switched off.</description>
+If Non Uno Pinata is active, its item handling is used and this mod's own item-keeping is switched off.
+
+[RU]
+Погибшие и недееспособные пешки не роняют оружие и инвентарь. Снимать вещи — обычным «Раздеть».
+
+С Anomaly: шамблеры, поднятые из вооружённых пешек, оставляют оружие. У каждого шамблера свой интеллект (общий уровень из настроек плюс случайный разброс), и от него зависит, что он умеет:
+- безмозглый: как в ванили, бросает оружие;
+- громила: оставляет оружие ближнего боя;
+- стрелок: оставляет любое оружие, стреляет с близкой дистанции;
+- тактик: ищет позицию для стрельбы и укрытия, подбирает лучшее оружие рядом.
+Чтобы держать оружие, нужны рабочие руки (для двуручного — две), а с повреждёнными глазами шамблер видит меньше оружия вокруг.
+
+Если включён Non Uno Pinata, предметами управляет он, а своя логика мода отключается.</description>
 </ModMetaData>
