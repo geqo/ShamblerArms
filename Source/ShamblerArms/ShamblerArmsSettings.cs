@@ -15,6 +15,9 @@ namespace ShamblerArms
         public float intellectLevel = 0.5f;
         public float intellectSpread = 0.25f;
 
+        // Tacticians look for weapons within this many cells, scaled by sight.
+        public float pickupRadius = 6f;
+
         public override void ExposeData()
         {
             base.ExposeData();
@@ -24,6 +27,7 @@ namespace ShamblerArms
             Scribe_Values.Look(ref keepInventoryOnDowned, "keepInventoryOnDowned", true);
             Scribe_Values.Look(ref intellectLevel, "intellectLevel", 0.5f);
             Scribe_Values.Look(ref intellectSpread, "intellectSpread", 0.25f);
+            Scribe_Values.Look(ref pickupRadius, "pickupRadius", 6f);
         }
 
         public void DoWindowContents(Rect inRect)
@@ -66,6 +70,12 @@ namespace ShamblerArms
             float hi = Mathf.Clamp01(intellectLevel + intellectSpread);
             list.Label("ShamblerArms_IntellectRange".Translate(lo.ToStringPercent(), hi.ToStringPercent()));
             list.Label("ShamblerArms_TierHelp".Translate());
+
+            list.Gap();
+            pickupRadius = Mathf.Round(list.SliderLabeled(
+                "ShamblerArms_PickupRadius".Translate(pickupRadius.ToString("0")),
+                pickupRadius, 2f, 12f, 0.5f, "ShamblerArms_PickupRadiusTip".Translate()));
+            list.Label("ShamblerArms_HandsHelp".Translate());
 
             list.End();
         }

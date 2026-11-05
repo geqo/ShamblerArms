@@ -37,7 +37,7 @@ namespace ShamblerArms.Shamblers
                 return true;
 
             ThingWithComps primary = pawn.equipment?.Primary;
-            if (primary == null || !ShamblerIntellect.CanWield(ShamblerIntellect.TierOf(pawn), primary.def))
+            if (primary == null || !ShamblerIntellect.CanWield(pawn, ShamblerIntellect.TierOf(pawn), primary.def))
                 return true;
 
             HandleApparel(pawn, def);

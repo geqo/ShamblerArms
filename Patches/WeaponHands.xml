@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!--
+    How many hands a shambler needs for a weapon (vanilla has no such notion).
+    Weapons not listed here (other mods) use a fallback: ranged up to 1.5 kg and melee up to 2.5 kg are one-handed.
+    Missing DLC defs are simply skipped.
+  -->
+  <!-- One-handed: pistols, grenades, javelin, swords, axes, maces, knives -->
+  <Operation Class="PatchOperationAddModExtension">
+    <success>Always</success>
+    <xpath>Defs/ThingDef[defName="Gun_Autopistol" or defName="Gun_Revolver" or defName="Gun_MachinePistol" or defName="NerveSpiker" or defName="Weapon_GrenadeEMP" or defName="Weapon_GrenadeFrag" or defName="Weapon_GrenadeMolotov" or defName="Weapon_GrenadeTox" or defName="Pila" or defName="MeleeWeapon_Knife" or defName="MeleeWeapon_Gladius" or defName="MeleeWeapon_Mace" or defName="MeleeWeapon_Axe" or defName="MeleeWeapon_Ikwa" or defName="MeleeWeapon_Club" or defName="MeleeWeapon_LongSword" or defName="MeleeWeapon_BreachAxe" or defName="MeleeWeapon_MonoSword" or defName="MeleeWeapon_MonoSwordBladelink" or defName="MeleeWeapon_PlasmaSword" or defName="MeleeWeapon_PlasmaSwordBladelink"]</xpath>
+    <value>
+      <li Class="ShamblerArms.WeaponHandsExtension">
+        <hands>1</hands>
+      </li>
+    </value>
+  </Operation>
+  <!-- Two-handed: bows, rifles, shotguns, SMG, heavy weapons, spears, hammers, staves -->
+  <Operation Class="PatchOperationAddModExtension">
+    <success>Always</success>
+    <xpath>Defs/ThingDef[defName="Bow_Short" or defName="Bow_Recurve" or defName="Bow_Great" or defName="Flamebow" or defName="Gun_AssaultRifle" or defName="Gun_HellcatRifle" or defName="Gun_BoltActionRifle" or defName="Gun_SniperRifle" or defName="Gun_ChargeRifle" or defName="Gun_PumpShotgun" or defName="Gun_ChainShotgun" or defName="Gun_HeavySMG" or defName="Gun_LMG" or defName="Gun_Minigun" or defName="Gun_ChargeLance" or defName="Gun_BeamGraser" or defName="Gun_BeamRepeater" or defName="Gun_Needle" or defName="Gun_ToxicNeedle" or defName="Gun_IncendiaryLauncher" or defName="Gun_Incinerator" or defName="Gun_SmokeLauncher" or defName="Gun_EmpLauncher" or defName="Gun_ToxbombLauncher" or defName="Gun_DoomsdayRocket" or defName="Gun_TripleRocket" or defName="Gun_HellsphereCannon" or defName="MeleeWeapon_Spear" or defName="MeleeWeapon_Warhammer" or defName="MeleeWeapon_Zeushammer" or defName="MeleeWeapon_ZeusHammerBladelink" or defName="MeleeWeapon_PsyfocusStaff"]</xpath>
+    <value>
+      <li Class="ShamblerArms.WeaponHandsExtension">
+        <hands>2</hands>
+      </li>
+    </value>
+  </Operation>
+</Patch>

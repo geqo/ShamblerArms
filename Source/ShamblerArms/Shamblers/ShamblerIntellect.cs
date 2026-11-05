@@ -65,7 +65,8 @@ namespace ShamblerArms
 
         public static float ValueOf(Pawn pawn) => Get(pawn)?.Severity ?? 0f;
 
-        public static bool CanWield(ShamblerTier tier, ThingDef weapon)
+        /// <summary>Intellect allows this kind of weapon (melee for Brawler, anything for Gunner+).</summary>
+        public static bool TierAllows(ShamblerTier tier, ThingDef weapon)
         {
             if (weapon == null || !weapon.IsWeapon)
                 return false;
@@ -73,5 +74,9 @@ namespace ShamblerArms
                 return true;
             return tier >= ShamblerTier.Brawler && weapon.IsMeleeWeapon;
         }
+
+        /// <summary>Intellect allows it and the shambler has enough working hands.</summary>
+        public static bool CanWield(Pawn pawn, ShamblerTier tier, ThingDef weapon) =>
+            TierAllows(tier, weapon) && ShamblerBody.HasHandsFor(pawn, weapon);
     }
 }

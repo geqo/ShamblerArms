@@ -14,4 +14,7 @@
   <ShamblerArms_IntellectSpreadTip>Each shambler gets a random value within level ± spread. Applies to shamblers raised from now on.</ShamblerArms_IntellectSpreadTip>
   <ShamblerArms_IntellectRange>New shamblers: {0} to {1}</ShamblerArms_IntellectRange>
   <ShamblerArms_TierHelp>Below 25%: mindless, drops its weapon. 25%+: brawler, keeps melee weapons. 50%+: gunner, shoots from short range. 75%+: tactician, uses cover and picks up weapons on its way.</ShamblerArms_TierHelp>
+  <ShamblerArms_PickupRadius>Weapon search radius: {0} cells</ShamblerArms_PickupRadius>
+  <ShamblerArms_PickupRadiusTip>Tacticians pick up the best weapon within this radius. Reduced in proportion to sight: damaged or missing eyes see less, a blind shambler picks up nothing.</ShamblerArms_PickupRadiusTip>
+  <ShamblerArms_HandsHelp>A shambler needs a working arm with a hand to hold a weapon, and two for two-handed weapons (rifles, bows, spears, hammers). Without enough hands it drops the weapon when it rises and won't pick one up.</ShamblerArms_HandsHelp>
 </LanguageData>
