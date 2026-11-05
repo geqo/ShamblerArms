@@ -1,6 +1,6 @@
 # Shambler Arms
 
-A RimWorld **1.6** mod (1.7 support is planned, see `docs/RESEARCH.md`). Requires Harmony.
+A RimWorld **1.6** mod (1.7 support is planned). Requires Harmony.
 The shambler part needs the Anomaly DLC. Available in English and Russian.
 
 ## Features
