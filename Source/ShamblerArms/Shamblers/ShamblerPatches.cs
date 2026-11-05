@@ -123,6 +123,50 @@ namespace ShamblerArms.Shamblers
     }
 
     /// <summary>
+    /// Shooting from a firing position happens in Wait_Combat via JobDriver_Wait.CheckForAutoAttack,
+    /// which vanilla skips entirely for shamblers (`|| pawn.IsShambler` → return). For Gunner+
+    /// with a ranged weapon we run the ranged part ourselves; everyone else stays vanilla.
+    /// </summary>
+    [HarmonyPatch(typeof(JobDriver_Wait), "CheckForAutoAttack")]
+    public static class JobDriver_Wait_CheckForAutoAttack_Patch
+    {
+        public static bool Prepare() => ModsConfig.AnomalyActive;
+
+        public static bool Prefix(JobDriver_Wait __instance)
+        {
+            Pawn pawn = __instance.pawn;
+            if (!pawn.IsShambler || ShamblerIntellect.TierOf(pawn) < ShamblerTier.Gunner)
+                return true;
+
+            Job job = __instance.job;
+            if (job == null || job.def != JobDefOf.Wait_Combat || !job.canUseRangedWeapon)
+                return false;
+            if (pawn.Downed || pawn.stances.FullBodyBusy || pawn.IsCarryingPawn())
+                return false;
+            if (pawn.drafter != null && !pawn.drafter.FireAtWill)
+                return false;
+
+            Verb verb = pawn.CurrentEffectiveVerb;
+            if (verb == null || verb.verbProps.IsMeleeAttack)
+                return false;
+
+            // Prefer the target the shambler AI already chose (it respects shambler targeting rules).
+            Thing target = pawn.mindState.enemyTarget;
+            if (target == null || !target.Spawned || !verb.CanHitTarget(target))
+            {
+                var flags = TargetScanFlags.NeedLOSToAll | TargetScanFlags.NeedThreat | TargetScanFlags.NeedAutoTargetable;
+                if (verb.IsIncendiary_Ranged())
+                    flags |= TargetScanFlags.NeedNonBurning;
+                target = (Thing)AttackTargetFinder.BestShootTargetFromCurrentPosition(pawn, flags);
+            }
+
+            if (target != null && pawn.TryStartAttack(target))
+                __instance.collideWithPawns = true;
+            return false;
+        }
+    }
+
+    /// <summary>
     /// A shambler with a gun that has no firing position would otherwise just wander off.
     /// Make it charge and bash instead, as a shambler should.
     /// </summary>
