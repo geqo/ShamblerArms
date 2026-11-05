@@ -3,6 +3,8 @@
 A RimWorld **1.6** mod (1.7 support is planned). Requires Harmony.
 The shambler part needs the Anomaly DLC. Available in English and Russian.
 
+**Steam Workshop:** https://steamcommunity.com/sharedfiles/filedetails/?id=3834113610
+
 ## Features
 
 1. **Dead and downed pawns keep their gear.** Weapons and inventory stay on the pawn or corpse
